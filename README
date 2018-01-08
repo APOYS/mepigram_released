@@ -4,6 +4,8 @@ This tool allows users to find methylated motifs in CpG context.
 
 Version 0.04
 
+Contact: vqngo@ucsd.edu
+
 ##############
 INSTALLATION:
 
@@ -65,5 +67,3 @@ Other included tools:
 
 3. Making motif LOGOs: You can generate both types of logo using the makeLOGO.py script. Use the flag --typeEF to generate typeEF motifs.
 
-
-	
