@@ -40,7 +40,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	`perl bgModel_typeE.pl 8 methyl_ref_genomeA`
 	
-OR 
+	OR 
 	
 	`perl bgModel_typeEF.pl 8 methyl_ref_genomeA`
 
@@ -48,7 +48,7 @@ OR
 	
 	`python fasta-dinucleotide-shuffle_typeE.py -f sequences.faa > sequences.DS.faa`
 	
-OR
+	OR
 	
 	`python fasta-dinucleotide-shuffle_typeEF.py -f sequences.faa > sequences.DS.faa`
 
