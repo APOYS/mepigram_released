@@ -40,7 +40,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	`perl bgModel_typeE.pl 8 methyl_ref_genomeA`
 	
-	OR 
+OR 
 	
 	`perl bgModel_typeEF.pl 8 methyl_ref_genomeA`
 
@@ -48,7 +48,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	`python fasta-dinucleotide-shuffle_typeE.py -f sequences.faa > sequences.DS.faa`
 	
-	OR
+OR
 	
 	`python fasta-dinucleotide-shuffle_typeEF.py -f sequences.faa > sequences.DS.faa`
 
@@ -57,11 +57,11 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	`python mepigram_typeE.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
-	OR
+OR
 	
 	`python mepigram_typeEF.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
-	* max_No_motifs: integer, the maximum number of motifs to be produced.
+* max_No_motifs: integer, the maximum number of motifs to be produced.
 
 ## mEpigram pipeline and other tools
 
@@ -71,16 +71,16 @@ You can use the included pipeline to run mepigram, it will do the dinucleotide-s
 	
 	`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
 
-	If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you should be able to find several highly enriched m-motifs. 
+If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you should be able to find several highly enriched m-motifs. 
 
-	*Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
+*Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
 
 #### Motif scanning: 
 To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
 	
 	`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file`
 	
-	*Note: The motifscannerA.py file should be executed in the main mEpigram directory
+*Note: The motifscannerA.py file should be executed in the main mEpigram directory
 
 #### Making motif LOGOs: 
 You can generate both types of logo using the makeLOGO.py script. Use the flag --typeEF to generate typeEF motifs.
