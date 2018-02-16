@@ -55,11 +55,11 @@ OR
 
 5. Run mEpigram (all parameters must be provided):
 	
-	`python mepigram_typeE.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
+`python mepigram_typeE.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
 OR
 	
-	`python mepigram_typeEF.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
+`python mepigram_typeEF.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
 * max_No_motifs: integer, the maximum number of motifs to be produced.
 
@@ -69,7 +69,7 @@ OR
 You can use the included pipeline to run mepigram, it will do the dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 	-To very quickly test the pipeline: 
 	
-	`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
+`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
 
 If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you should be able to find several highly enriched m-motifs. 
 
@@ -78,7 +78,7 @@ If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you s
 #### Motif scanning: 
 To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
 	
-	`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file`
+`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file`
 	
 *Note: The motifscannerA.py file should be executed in the main mEpigram directory
 
