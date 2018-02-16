@@ -65,7 +65,8 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 
 ## mEpigram pipeline and other tools
 
-1. mEpigram Pipeline: You can use the included pipeline to run mepigram, it will do the dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
+#### mEpigram Pipeline: 
+You can use the included pipeline to run mepigram, it will do the dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 	-To very quickly test the pipeline: 
 	
 	`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
@@ -74,11 +75,13 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 
 	*Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
 
-2. Motif scanning: To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
+#### Motif scanning: 
+To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
 	
 	`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file`
 	
 	*Note: The motifscannerA.py file should be executed in the main mEpigram directory
 
-3. Making motif LOGOs: You can generate both types of logo using the makeLOGO.py script. Use the flag --typeEF to generate typeEF motifs.
+#### Making motif LOGOs: 
+You can generate both types of logo using the makeLOGO.py script. Use the flag --typeEF to generate typeEF motifs.
 
