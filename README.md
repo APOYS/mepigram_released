@@ -55,11 +55,11 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 
 5. Run mEpigram (all parameters must be provided):
 	
-`python mepigram_typeE.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
+	`python mepigram_typeE.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
-OR
+	OR
 	
-`python mepigram_typeEF.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
+	`python mepigram_typeEF.py testInput.faa testInputCTCF.DS.faa your_specific_genome/background_met-8.tsv metgraph-8mer/ resultfile.meme max_No_motifs`
 	
 * max_No_motifs: integer, the maximum number of motifs to be produced.
 
