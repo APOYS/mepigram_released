@@ -1,4 +1,4 @@
-## mEpigram  
+# mEpigram  
 
 This tool allows users to find methylated motifs in CpG context.
 
@@ -6,8 +6,7 @@ Version 0.04
 
 Contact: vqngo@ucsd.edu
 
-##############
-INSTALLATION:
+## INSTALLATION:
 
 - The programs were written in Perl, Python2.7 and Julia (0.4.5 or later)
 
@@ -21,7 +20,7 @@ INSTALLATION:
 
 
 
-##############
+## Usage
  
 To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py script (example in Other included tools). However, you can run each modules separately:
 
@@ -51,8 +50,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	* max_No_motifs: integer, the maximum number of motifs to be produced.
 
-##############
-Other included tools: 
+## mEpigram pipeline and other tools
 
 1. mEpigram Pipeline: You can use the included pipeline to run mepigram, it will do the dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 	-To very quickly test the pipeline: 
