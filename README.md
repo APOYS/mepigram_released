@@ -83,5 +83,5 @@ To identify locations of matches using your motifs, you can use the motif scanni
 *Note: The motifscannerA.py file should be executed in the main mEpigram directory
 
 #### Making motif LOGOs: 
-You can generate both types of logo using the *makeLOGO.py script*. Use the flag --typeEF to generate typeEF motifs.
+You can generate both types of logo using the **makeLOGO.py** script. Use the flag --typeEF to generate typeEF motifs.
 
