@@ -68,7 +68,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 #### mEpigram Pipeline: 
 You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 
--To very quickly test the pipeline: 
+To very quickly test the pipeline: 
 	
 `python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
 
