@@ -6,7 +6,7 @@ Version 0.04
 
 Contact: vqngo@ucsd.edu
 
-## INSTALLATION:
+## Installation
 
 - The programs were written in Perl, Python2.7 and Julia (0.4.5 or later)
 
