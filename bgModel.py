@@ -1,6 +1,7 @@
 import argparse
 import os 
 from collections import Counter
+import sys
 
 def revcomplE(word):
 	revComp=''
@@ -38,11 +39,11 @@ def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-gd", "--genomedir", help="a directory that contains genome fasta sequence files, ideally one chromosome per file")
 	parser.add_argument("-k", "--klength",type =int, help="integer, the length of k-mers")
-	parser.add_argument('--typeEF', dest='typeEF',action='store_true', help="using typeEF, default is typeE")
-	parser.set_defaults(typeEF=False)
+	parser.add_argument("-m", "--mode",type =str, help="specify whether using typeE or typeEF")
+	#parser.add_argument('--typeEF', dest='typeEF',action='store_true', help="using typeEF, default is typeE")
+	#parser.set_defaults(typeEF=False)
 
 	args = parser.parse_args()
-	
 
 	genomedir = args.genomedir
 	if genomedir == None:
@@ -54,10 +55,25 @@ def main():
 		print "KLENGTH must be specified"
 		return
 
-	typeEF = args.typeEF
+	mode = args.mode
+	print mode
+
+	typeEF = False
+	if mode == None:
+		print "Please choose a mode, typeE or typeEF"
+		sys.exit(1)
+	elif mode != "typeE" and mode != "typeEF":
+		print "ERROR: unrecognized mode", mode
+		sys.exit(1)
+	else:
+		if mode == typeEF:
+			typeEF = True
+
 	print "GENOMEDIR is",genomedir
 	print "klength is", k
-	print "Using typeEF",typeEF
+	print "Using ",mode
+
+
 
 	kmercounts = {} # 
 	total = 0
