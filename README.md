@@ -2,7 +2,7 @@
 
 This tool allows users to find methylated motifs in CpG context.
 
-Version 0.04
+Version 0.05
 
 Contact: vqngo@ucsd.edu
 
