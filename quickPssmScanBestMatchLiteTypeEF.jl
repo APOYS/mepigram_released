@@ -11,7 +11,7 @@ function score(kmer,PWM,background)
 end
 function load_motifs(filename)
     file=open(filename)
-    seq=split(strip(readall(file)),"MOTIF")
+    seq=split(strip(readstring(file)),"MOTIF")
     seq=seq[2:end];
     motifs=Dict()
     #ans=Dict{ASCIIString,Any}[]
@@ -63,7 +63,7 @@ function main()
     resultdir = ARGS[4] #add this tag to all of the result files(at the end)
     bgfile =ARGS[5]
 
-    seq=split(strip(readall(open(bgfile))),'\n')
+    seq=split(strip(readstring(open(bgfile))),'\n')
     bg=Dict()
     for line in seq
         tmp=split(strip(line),'\t')

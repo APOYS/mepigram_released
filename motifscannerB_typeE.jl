@@ -11,7 +11,7 @@ function score(kmer,PWM,background)
 end
 function load_motifs(filename)
     file=open(filename)
-    seq=split(strip(readall(file)),"MOTIF")
+    seq=split(strip(readstring(file)),"MOTIF")
     seq=seq[2:end];
     motifs=Dict()
     #ans=Dict{ASCIIString,Any}[]
@@ -124,7 +124,7 @@ function scoreCutoff_new(pwm,DsSeqs,pvaluecutoff,bg) #dont use this one
     close(target)
     
     run(`python ./calcscorecutoff.py $inname $outname`)
-    scorecutoff=float(strip(readall(open(outname))))
+    scorecutoff=float(strip(readstring(open(outname))))
     return scorecutoff,scores[1],scores[end]
 end
 function var(array)
@@ -145,7 +145,7 @@ function main()
     output = ARGS[5]
 
     bgfile =ARGS[6]
-    seq=split(strip(readall(open(bgfile))),'\n')
+    seq=split(strip(readstring(open(bgfile))),'\n')
     bg=Dict()
     for line in seq
         tmp=split(strip(line),'\t')
@@ -157,8 +157,8 @@ function main()
     println("scanning "*positiveregions*" with "*motiffile*" at pvalue "*string(p_cutoff))
     motifs=load_motifs(motiffile)
     #println(typeof(motifs))
-    trainnegset = split(strip(readall(open(negativeregions))),'>')[2:end]
-    posset = split(strip(readall(open(positiveregions))),'>')[2:end]
+    trainnegset = split(strip(readstring(open(negativeregions))),'>')[2:end]
+    posset = split(strip(readstring(open(positiveregions))),'>')[2:end]
     
     global transdict=Dict('A'=>'T','C'=>'G','G'=>'C','T'=>'A')
     trainnegseqs = ASCIIString[] 
