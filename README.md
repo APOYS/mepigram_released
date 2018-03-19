@@ -70,9 +70,9 @@ You can use the included pipeline to run mepigram, it will perform dinucleotide-
 
 To very quickly test the pipeline: 
 	
-`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
+`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/metgraph-5mer/`
 
-If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you should be able to find several highly enriched m-motifs. 
+If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it from our website) instead, you should be able to find several highly enriched m-motifs. 
 
 *Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
 
