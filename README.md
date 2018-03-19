@@ -8,7 +8,7 @@ Contact: vqngo@ucsd.edu
 
 ## Installation
 
-- The programs were written in Perl, Python2.7 and Julia (tested with Julia 0.4.5 )
+- The programs were written in Perl, Python2.7 and Julia (tested with Julia v0.6.2 )
 
 - mEpigram requires a graph of possible k-mer interactions to function. Download the graphs here: 
 	* CpG mode: http://wanglab.ucsd.edu/star/mepigram/graphE-8mer.tar.gz
