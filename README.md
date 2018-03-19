@@ -8,7 +8,7 @@ Contact: vqngo@ucsd.edu
 
 ## Installation
 
-- The programs were written in Perl, Python2.7 and Julia (tested with Julia 0.4.5 )
+- The programs were written in Perl, Python2.7 and Julia (tested with Julia v0.6.2 )
 
 - mEpigram requires a graph of possible k-mer interactions to function. Download the graphs here: 
 	* CpG mode: http://wanglab.ucsd.edu/star/mepigram/graphE-8mer.tar.gz
@@ -69,10 +69,13 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 
 To very quickly test the pipeline: 
-	
-`python mepigram_wrapper.py -f testInput.faa -m cpg -b your_specific_genome/background_met-5.tsv -g metgraph-5mer -n max_No_motif`
+TypeE:	
+`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/graphE-5mer/`
+TypeEF:
+`python mepigram_wrapper.py -f testfiles/test_data_typeEF/ENCFF002CQR.narrowPeak.1000.faa -m typeEF -b testfiles/test_data_typeEF/background_typeEF-5.tsv -g testfiles/test_data_typeEF/graphEF-5mer/`
 
-If you use k=8 (by inputting background_met-8.tsv, metgraph-8mer instead), you should be able to find several highly enriched m-motifs. 
+
+If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it from our website) instead, you should be able to find several highly enriched m-motifs. 
 
 *Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
 
