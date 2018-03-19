@@ -8,7 +8,7 @@ Contact: vqngo@ucsd.edu
 
 ## Installation
 
-- The programs were written in Perl, Python2.7 and Julia (tested with Julia v0.6.2 )
+- The programs were written in Python2.7 and Julia (tested with Julia v0.6.2 )
 
 - mEpigram requires a graph of possible k-mer interactions to function. Download the graphs here: 
 	* CpG mode: http://wanglab.ucsd.edu/star/mepigram/graphE-8mer.tar.gz
@@ -36,13 +36,13 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 	`python bedToFasta.py -f input.bed -r methyl_ref_genomeA -o output.faa`
 
-3. Make background model: Calculate the number of k-mers in the genome. This might take some time but you only need to do this once per reference genome.
+3. Make background model: Count the number of k-mers in the genome. This might take a while (a few hours on human whole genome) but you only need to do this once per reference genome. Example: Count the number of 5-mers in the sample genome:
 	
-	`perl bgModel_typeE.pl 8 methyl_ref_genomeA`
+	`python bgModel.py -gd testfiles/samplegenome/ -k 5 -m typeE`
 	
 	OR 
 	
-	`perl bgModel_typeEF.pl 8 methyl_ref_genomeA`
+	`python bgModel.py -gd testfiles/samplegenome/ -k 5 -m typeEF`
 
 4. Shuffle the sequences: this step will di-nucleotide shuffle your FASTA input sequences to be used. 
 	
