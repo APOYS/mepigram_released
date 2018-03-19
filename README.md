@@ -69,8 +69,11 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
 
 To very quickly test the pipeline: 
-	
-`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/metgraph-5mer/`
+TypeE:	
+`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/graphE-5mer/`
+TypeEF:
+`python mepigram_wrapper.py -f testfiles/test_data_typeEF/ENCFF002CQR.narrowPeak.1000.faa -m typeEF -b testfiles/test_data_typeEF/background_typeEF-5.tsv -g testfiles/test_data_typeEF/graphEF-5mer/`
+
 
 If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it from our website) instead, you should be able to find several highly enriched m-motifs. 
 
