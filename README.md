@@ -24,6 +24,27 @@ Contact: vqngo@ucsd.edu
  
 To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py script (example in Other included tools). However, you can run each modules separately:
 
+#### mEpigram Pipeline: 
+You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
+
+To very quickly test the pipeline: 
+
+TypeE:	
+
+`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/graphE-5mer/`
+
+TypeEF:
+
+`python mepigram_wrapper.py -f testfiles/test_data_typeEF/ENCFF002CQR.narrowPeak.1000.faa -m typeEF -b testfiles/test_data_typeEF/background_typeEF-5.tsv -g testfiles/test_data_typeEF/graphEF-5mer/`
+
+
+If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it from our website) instead, you should be able to find several highly enriched m-motifs. 
+
+*Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
+
+
+#### Running each module separately:
+
 1. Insert methylation information into the genome, the input is assumed to be in BED format by default. WIG format can be used with --wig. In BED format, each line contains chromosome name, start location (0-based index), start location +1. An output directory will be created to contain the new genome with methylation information. The reference genome should be in a directory format, with each chromosomal sequence contained in a separate file, labeled by its chromosome name. 
 	
 	`python modifyReference.py -f input.bed -r reference_genome_directory -o methyl_ref_genomeA`
@@ -63,25 +84,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 	
 * max_No_motifs: integer, the maximum number of motifs to be produced.
 
-## mEpigram pipeline and other tools
-
-#### mEpigram Pipeline: 
-You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
-
-To very quickly test the pipeline: 
-
-TypeE:	
-
-`python mepigram_wrapper.py -f testfiles/test_data_typeE/ENCFF002CQR.narrowPeak.1000.faa -m typeE -b testfiles/test_data_typeE/background_typeE-5.tsv -g testfiles/test_data_typeE/graphE-5mer/`
-
-TypeEF:
-
-`python mepigram_wrapper.py -f testfiles/test_data_typeEF/ENCFF002CQR.narrowPeak.1000.faa -m typeEF -b testfiles/test_data_typeEF/background_typeEF-5.tsv -g testfiles/test_data_typeEF/graphEF-5mer/`
-
-
-If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it from our website) instead, you should be able to find several highly enriched m-motifs. 
-
-*Note: This pipeline must be executed in the mepigram main directory. It also requires Julia installed.
+## Other tools
 
 #### Motif scanning: 
 To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
