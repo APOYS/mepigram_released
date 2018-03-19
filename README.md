@@ -34,7 +34,7 @@ To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py 
 
 2. Make methylated sequences from bed files and the genome above:
 	
-	`python BedtoFasta.py -f input.bed -r methyl_ref_genomeA -o output.faa`
+	`python bedToFasta.py -f input.bed -r methyl_ref_genomeA -o output.faa`
 
 3. Make background model: Calculate the number of k-mers in the genome. This might take some time but you only need to do this once per reference genome.
 	
