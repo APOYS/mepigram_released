@@ -14,7 +14,7 @@ function load_motifs(filename)
     seq=split(strip(readstring(file)),"MOTIF")
     seq=seq[2:end];
     motifs=Dict()
-    #ans=Dict{ASCIIString,Any}[]
+    #ans=Dict{AbstractString,Any}[]
     for s=1:endof(seq)
         t=split(strip(seq[s]),"\n")
         motifs[t[1]]=t[3:end]
@@ -73,7 +73,7 @@ function scoreCutoff(pwm,DsSeqs,pvaluecutoff,bg)
     end 
     num=length(scores)
     scores=sort(scores,rev=true)
-    scorecutoff=scores[int(num*pvaluecutoff)]*0.999
+    scorecutoff=scores[Int(floor(num*pvaluecutoff))]*0.999
     #println( "score cutoff is",scorecutoff)
     return scorecutoff,scores[1],scores[end]
 end
@@ -139,17 +139,17 @@ function main()
         tmp=split(strip(line),'\t')
         bg[collect((tmp[1]))[1]]=float(tmp[2])
     end 
-    println(bg)
+    #println(bg)
     
     #load the background
-    println("scanning "*positiveregions*" with "*motiffile*" at pvalue "*string(p_cutoff))
+    println("Scanning "*positiveregions*" with "*motiffile*" at pvalue "*string(p_cutoff))
     motifs=load_motifs(motiffile)
     #println(typeof(motifs))
     trainnegset = split(strip(readstring(open(negativeregions))),'>')[2:end]
     posset = split(strip(readstring(open(positiveregions))),'>')[2:end]
     
     global transdict=Dict('A'=>'T','C'=>'G','G'=>'C','T'=>'A','E'=>'F','F'=>'E')
-    trainnegseqs = ASCIIString[] 
+    trainnegseqs = AbstractString[] 
     #trainnegseqs_names=[]
     for seq in trainnegset
         try
@@ -161,8 +161,8 @@ function main()
         end 
     end 
     
-    posseqs=ASCIIString[]
-    posseqs_names=ASCIIString[]
+    posseqs=AbstractString[]
+    posseqs_names=AbstractString[]
     for seq in posset
         try
             tmp=split(strip(seq),"\n")

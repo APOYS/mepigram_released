@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Begin document body -->
+<fimo version="4.12.0" release="Tue Jun 27 16:22:50 2017 -0700">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation=  xmlns:fimo="http://noble.gs.washington.edu/schema/fimo"
+>
+<command-line>/home/meme/meme_4.12.0/bin/fimo --parse-genomic-coord --verbosity 1 --oc fimo_out_13 --bgfile ./background --motif KAGRAA dreme_out/dreme.xml ./ENCFF002CQR.narrowPeak.cytomod.faa</command-line>
+<settings>
+<setting name="output directory">fimo_out_13</setting>
+<setting name="MEME file name">dreme_out/dreme.xml</setting>
+<setting name="sequence file name">./ENCFF002CQR.narrowPeak.cytomod.faa</setting>
+<setting name="background file name">./background</setting>
+<setting name="allow clobber">true</setting>
+<setting name="compute q-values">true</setting>
+<setting name="parse genomic coord.">true</setting>
+<setting name="text only">false</setting>
+<setting name="scan both strands">true</setting>
+<setting name="output threshold">0.0001</setting>
+<setting name="threshold type">p-value</setting>
+<setting name="max stored scores">100000</setting>
+<setting name="pseudocount">0.1</setting>
+<setting name="verbosity">1</setting>
+<setting name="selected motif">KAGRAA</setting>
+</settings>
+<sequence-data num-sequences="15557" num-residues="4000126" />
+<alphabet name="DNA with covalent modifications" like="dna">
+<letter id="A" symbol="A" complement="T" name="Adenine" colour="8510A8"/>
+<letter id="C" symbol="C" complement="G" name="Cytosine" colour="A50026"/>
+<letter id="G" symbol="G" complement="C" name="Guanine" colour="313695"/>
+<letter id="T" symbol="T" complement="A" name="Thymine" colour="A89610"/>
+<letter id="c" symbol="c" complement="4" name="5-Carboxylcytosine" colour="FEE090"/>
+<letter id="f" symbol="f" complement="3" name="5-Formylcytosine" colour="FDAE61"/>
+<letter id="h" symbol="h" complement="2" name="5-Hydroxymethylcytosine" colour="F46D43"/>
+<letter id="m" symbol="m" complement="1" name="5-Methylcytosine" colour="D73027"/>
+<letter id="n1" symbol="1" complement="m" name="Guanine:5-Methylcytosine" colour="4575B4"/>
+<letter id="n2" symbol="2" complement="h" name="Guanine:5-Hydroxymethylcytosine" colour="74ADD1"/>
+<letter id="n3" symbol="3" complement="f" name="Guanine:5-Formylcytosine" colour="ABD9E9"/>
+<letter id="n4" symbol="4" complement="c" name="Guanine:5-Carboxylcytosine" colour="E0F3F8"/>
+<letter id="x3F" symbol="?" equals="ACGTcfhm1234"/>
+<letter id="z" symbol="z" equals="Ccfhm"/>
+<letter id="n9" symbol="9" equals="G1234"/>
+<letter id="N" symbol="N" equals="ACGT"/>
+<letter id="V" symbol="V" equals="ACG"/>
+<letter id="H" symbol="H" equals="ACT"/>
+<letter id="D" symbol="D" equals="AGT"/>
+<letter id="B" symbol="B" equals="CGT"/>
+<letter id="y" symbol="y" equals="Ccf"/>
+<letter id="n8" symbol="8" equals="G34"/>
+<letter id="M" symbol="M" equals="AC"/>
+<letter id="R" symbol="R" equals="AG"/>
+<letter id="W" symbol="W" equals="AT"/>
+<letter id="S" symbol="S" equals="CG"/>
+<letter id="Y" symbol="Y" equals="CT"/>
+<letter id="K" symbol="K" equals="GT"/>
+<letter id="x" symbol="x" equals="hm"/>
+<letter id="n7" symbol="7" equals="12"/>
+</alphabet>
+<motif name="TKDTGCAA" alt="DREME-1" width="8" best-possible-match="TGATGCAA"/>
+<motif name="TTDmGYAA" alt="DREME-2" width="8" best-possible-match="TTGmGCAA"/>
+<motif name="TGDmGCAA" alt="DREME-3" width="8" best-possible-match="TGAmGCAA"/>
+<motif name="AGGCTGGA" alt="DREME-4" width="8" best-possible-match="AGGCTGGA"/>
+<motif name="TTGCBYAA" alt="DREME-5" width="8" best-possible-match="TTGCTCAA"/>
+<motif name="TGDC1CAA" alt="DREME-6" width="8" best-possible-match="TGAC1CAA"/>
+<motif name="CAGTGAGC" alt="DREME-7" width="8" best-possible-match="CAGTGAGC"/>
+<motif name="CCKCCY" alt="DREME-8" width="6" best-possible-match="CCTCCC"/>
+<motif name="TTGKGWAA" alt="DREME-9" width="8" best-possible-match="TTGTGAAA"/>
+<motif name="TGDCGCAA" alt="DREME-10" width="8" best-possible-match="TGACGCAA"/>
+<motif name="TTRmGAAA" alt="DREME-11" width="8" best-possible-match="TTGmGAAA"/>
+<motif name="TGAYGWAA" alt="DREME-12" width="8" best-possible-match="TGATGAAA"/>
+<motif name="AAAVAAAA" alt="DREME-13" width="8" best-possible-match="AAAAAAAA"/>
+<motif name="CTGTYDCC" alt="DREME-14" width="8" best-possible-match="CTGTCACC"/>
+<motif name="CARCCTC" alt="DREME-15" width="7" best-possible-match="CAGCCTC"/>
+<motif name="CYRGGA" alt="DREME-16" width="6" best-possible-match="CTAGGA"/>
+<motif name="ACYCTGTC" alt="DREME-17" width="8" best-possible-match="ACTCTGTC"/>
+<motif name="TTDCGAAA" alt="DREME-18" width="8" best-possible-match="TTGCGAAA"/>
+<motif name="TGARGCAA" alt="DREME-19" width="8" best-possible-match="TGAAGCAA"/>
+<motif name="CWGGAR" alt="DREME-20" width="6" best-possible-match="CTGGAA"/>
+<motif name="CTTGARCC" alt="DREME-21" width="8" best-possible-match="CTTGAACC"/>
+<motif name="AGAKGGMG" alt="DREME-22" width="8" best-possible-match="AGAGGGAG"/>
+<motif name="AGRC1GAG" alt="DREME-23" width="8" best-possible-match="AGAC1GAG"/>
+<motif name="KAGRAA" alt="DREME-24" width="6" best-possible-match="GAGAAA"/>
+<motif name="1ACARAG" alt="DREME-25" width="7" best-possible-match="1ACAGAG"/>
+<motif name="TTABGTAA" alt="DREME-26" width="8" best-possible-match="TTATGTAA"/>
+<motif name="CCACTAGR" alt="DREME-27" width="8" best-possible-match="CCACTAGA"/>
+<motif name="AGCCYGGG" alt="DREME-28" width="8" best-possible-match="AGCCTGGG"/>
+<motif name="AGTGAGAC" alt="DREME-29" width="8" best-possible-match="AGTGAGAC"/>
+<background source="./background">
+<value letter="A">0.272</value>
+<value letter="C">0.224</value>
+<value letter="G">0.224</value>
+<value letter="T">0.272</value>
+<value letter="c">0.000</value>
+<value letter="f">0.000</value>
+<value letter="h">0.000</value>
+<value letter="m">0.004</value>
+<value letter="1">0.004</value>
+<value letter="2">0.000</value>
+<value letter="3">0.000</value>
+<value letter="4">0.000</value>
+</background>
+<cisml-file>cisml.xml</cisml-file>
+</fimo>
