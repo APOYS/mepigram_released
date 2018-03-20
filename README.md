@@ -87,9 +87,9 @@ If you use k=8 by inputting background_typeE-8.tsv, graphE-8mer (download it fro
 ## Other tools
 
 #### Motif scanning: 
-To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. 
+To identify locations of matches using your motifs, you can use the motif scanning tool. The motif-scanning program is written in julia so it's necessary to have the Julia language installed. The program takes a FASTA file, a motif PWM file, and a background file that states background base composition. Although the background is optional, it is recommended that you use the appropriate background as the program will assume equal nucleotide distribution if the background is not provided.
 	
-`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file`
+`python motifscannerA.py [options] -f fastafile -m motiffile -o output_file -b backgroundBaseComposition`
 	
 *Note: The motifscannerA.py file should be executed in the main mEpigram directory
 
