@@ -159,7 +159,7 @@ def makeGraph():
     
     if(os.path.exists(GRAPHDIR)==True): #if graphdir exists
 	
-        print "Pre-existing graph :)\n";
+        #print "Pre-existing graph :)\n";
     
         n2inc = {}
         try:
