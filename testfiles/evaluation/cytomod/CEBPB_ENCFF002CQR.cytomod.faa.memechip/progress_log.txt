@@ -1,0 +1,46 @@
+Invoking:
+  getsize CEBPB_ENCFF002CQR.cytomod.faa.memechip/CEBPB_ENCFF002CQR.cytomod.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.077443
+Invoking:
+  fasta-most -min 50 < CEBPB_ENCFF002CQR.cytomod.faa.memechip/CEBPB_ENCFF002CQR.cytomod.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.15023
+Invoking:
+  fasta-center -alph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt -len 100 < CEBPB_ENCFF002CQR.cytomod.faa.memechip/CEBPB_ENCFF002CQR.cytomod.faa 1> CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.297229
+Invoking:
+  fasta-shuffle-letters CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-centered CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-shuffled -kmer 2 -tag -dinuc -alph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.099709
+Invoking:
+  fasta-subsample CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-centered 600 -rest CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-discarded -seed 1 1> CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-sampled
+Finished invoke:
+  name: sample_seqs  status: 0  time: 0.275759
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt -m 1 CEBPB_ENCFF002CQR.cytomod.faa.memechip/CEBPB_ENCFF002CQR.cytomod.faa CEBPB_ENCFF002CQR.cytomod.faa.memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.048185
+Invoking:
+  meme CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-sampled -oc CEBPB_ENCFF002CQR.cytomod.faa.memechip/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile CEBPB_ENCFF002CQR.cytomod.faa.memechip/background -alph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt -time 5082 -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 1364.482959
+Invoking:
+  dreme -v 1 -oc CEBPB_ENCFF002CQR.cytomod.faa.memechip/dreme_out -png -alph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt -p CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-centered -n CEBPB_ENCFF002CQR.cytomod.faa.memechip/seqs-shuffled -t 6593 -e 0.05
+Finished invoke:
+  name: dreme  status: 0  time: 5789.281173
+Invoking:
+  centrimo -seqlen 264 -verbosity 1 -oc CEBPB_ENCFF002CQR.cytomod.faa.memechip/centrimo_out -bfile CEBPB_ENCFF002CQR.cytomod.faa.memechip/background -xalph CEBPB_ENCFF002CQR.cytomod.faa.memechip/alphabet.meme.txt CEBPB_ENCFF002CQR.cytomod.faa.memechip/CEBPB_ENCFF002CQR.cytomod.faa CEBPB_ENCFF002CQR.cytomod.faa.memechip/meme_out/meme.xml CEBPB_ENCFF002CQR.cytomod.faa.memechip/dreme_out/dreme.xml
+Finished invoke:
+  name: centrimo  status: 0  time: 6.611574
+Invoking:
+  tomtom -verbosity 1 -text -thresh 0.1 CEBPB_ENCFF002CQR.cytomod.faa.memechip/combined.meme CEBPB_ENCFF002CQR.cytomod.faa.memechip/combined.meme 1> CEBPB_ENCFF002CQR.cytomod.faa.memechip/motif_alignment.txt
+Finished invoke:
+  name: align  status: 0  time: 2.420806
+Writing output
+Invoking:
+  meme-chip_html_to_tsv CEBPB_ENCFF002CQR.cytomod.faa.memechip/meme-chip.html CEBPB_ENCFF002CQR.cytomod.faa.memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.036135
+Done
