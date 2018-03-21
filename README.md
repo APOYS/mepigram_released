@@ -1,6 +1,6 @@
 # mEpigram  
 
-This tool allows users to find methylated motifs in CpG context.
+This tool allows users to find methylated motifs in CpG context and also motifs that contain modified bases. 
 
 Version 0.05
 
