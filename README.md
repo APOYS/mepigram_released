@@ -22,7 +22,7 @@ Contact: vqngo@ucsd.edu
 
 ## Usage
  
-To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py script (example in Other included tools). However, you can run each modules separately:
+To run mEpigram: It's recommended to run mEpigram using the mepigram_wrapper.py script. However, you can run each modules separately as well.
 
 #### mEpigram Pipeline: 
 You can use the included pipeline to run mepigram, it will perform dinucleotide-shulffing, mepigram_typeE, and enrichment calculation (which uses the motif scanning module).
