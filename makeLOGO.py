@@ -119,7 +119,7 @@ def main():
     %s [options]
 
         -m <filename>       input motif file
-        --typeEF                convert the modified base to E and the complementary base to F, default is False (optional)
+        --typeEF            convert the modified base to E and the complementary base to F, default is False (optional)
         -t                  name tag to add to the motif files (optional)
         -o <output dir>     name of the output dir to be created (eg. hg19_methylated)
         -h                  print this usage message

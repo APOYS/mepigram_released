@@ -3,7 +3,6 @@
 """
 TODO: 
 	- replace all perl scripts with python
-	- use args
 
 
 Workflow:
@@ -19,8 +18,6 @@ import random as rd
 import os
 import sys
 import os.path
-import argparse
-
 
 def load_motifs_typeE(filename):
 	file=open(filename)
@@ -156,19 +153,23 @@ def main():
 	#parsing argument
 	faafile = None
 	#memefile = None
-	outfile = None #this contains the meme file, the enrichment file .
-	mode = None # typeEF or typeE
+	outfile = None #this contains the meme file, the scan file if chosen.
+	mode = None #right now use the default mode, cpg
 	backgroundfile = None
-	graphdir = None 
-	filter_boolean = False # Not used right now
+	graphdir = None #this is hardcoded for now (using only the cpg 8-mer graph)
+	filter_boolean = False
 	maxmotifnum = None
 	enrichmentmode = "none"  #choose whether to calculate the enrichment of all motifs found or just the m-motifs, or just non-m motifs, or none
-	#enrichmentmode is not used right now, default is all
 
 	####Testing using hardcodes
+
+	#faafile="../epigram-0.003/Sox2-P.faa"
+	#faafile="../CrossScan_H1_CTCF/ENCFF002CDS.narrowPeak.faa"
+	#graphdir="./metgraph-8mer/"
+	#backgroundfile="./hg19_H1_meth_bg/background_met-8.tsv"
 	maxmotifnum=200
 	mode=None
-	seed=rd.randint(0, 10000000)
+	seed=rd.randint(0, 10000)
 
 	
 	usage = """USAGE: 
@@ -187,25 +188,85 @@ def main():
 	""" % (sys.argv[0])
 
 	# parse command line
-	
-	parser = argparse.ArgumentParser()
-	parser.add_argument("-f", "--faafile", help = "input file, FASTA format")
-	parser.add_argument("-b", "--backgroundfile", help = "the background model, which contains k-mer counts")
-	parser.add_argument("-m", "--mode", help = "specify whether using typeE or typeEF")
-	parser.add_argument("-g", "--graphdir", help = "specify whether using typeE or typeEF")
-	parser.add_argument("-o", "--output", default = None, help="output directory to be created")
-	parser.add_argument("-n", "--maxmotifnum",default = 200, type=int, help="integer, maximum number of motifs to find",)
+	i = 1
+	while i < len(sys.argv):
+		arg = sys.argv[i]
+		if (arg == "-f"):
+			i += 1
+			try: faafile = sys.argv[i]
+			except:
+				print " Error in -f" 
+				sys.exit(1)
+		elif (arg == "-m"):
+			i += 1
+			try: mode = sys.argv[i]
+			except:
+				print "Error in -m" 
+				sys.exit(1)
+		elif (arg == "-g"):
+			i += 1
+			try: graphdir = sys.argv[i]
+			except:
+				print "Error in -g" 
+				sys.exit(1)
+		elif (arg == "-b"):
+			i += 1
+			try: backgroundfile = sys.argv[i]
+			except:
+				print "Error in -b" 
+				sys.exit(1)
+		elif (arg == "-o"):
+			i += 1
+			try: outfile = sys.argv[i]
+			except:
+				print "Error in -o" 
+				sys.exit(1)
+		elif (arg == "--filter"):
+			i+=1
+			filter_boolean = True
+		elif (arg == "-n"):
+			i += 1
+			try: maxmotifnum = int(sys.argv[i])
+			except:
+				print "Error in -n" 
+				sys.exit(1)
+		elif (arg == "-e"):
+			i += 1
+			try: enrichmentmode = sys.argv[i]
+			except:
+				print "Error in -e" 
+				sys.exit(1)
+		elif (arg == "-h"):
+			print >> sys.stderr, usage; sys.exit(1)
+		else:
+			print >> sys.stderr, "Unknown command line argument: " + arg + " \nPlease check the usage with -h"
+			sys.exit(1)
+		i += 1
 
-	args = parser.parse_args()
 	# check that required arguments given
-	faafile = args.faafile
-	#memefile = None
-	outfile = args.output #this contains the meme file, the enrichment file .
-	mode = args.mode # typeEF or typeE
-	backgroundfile = args.backgroundfile
-	graphdir = args.graphdir 
-	maxmotifnum = args.maxmotifnum
-
+	if (faafile == None):
+		print "No input fasta file, exit."
+		print >> sys.stderr, usage; sys.exit(1)
+		sys.exit(1)
+	elif (mode != 'typeE' and mode !='typeEF'):
+		print "Error in mode, please choose a valid mode."
+		print >> sys.stderr, usage; sys.exit(1)
+		sys.exit(1)
+	elif (enrichmentmode!="none" and enrichmentmode!="all" and enrichmentmode!="meth" and enrichmentmode!="nonmeth"):
+		print "Invalid option in -e, exit."
+		print >> sys.stderr, usage; sys.exit(1)
+		sys.exit(1)
+	if (outfile == None):
+		outfile = faafile+".mepigram"
+		print "No output file specified, will use the default",outfile
+	if (graphdir == None):
+		print "No graph directory specified, please input graph directory"
+		sys.exit(1)
+	if (backgroundfile == None):
+		print "No background file specified, please input your background"
+		sys.exit(1)
+		#background={'A':0.2,'C':0.2,'G':0.2,'T':0.2,'E':0.2}
+	# Check if the inputs exist:
 	if os.path.isfile(faafile) == False: 
 		print "ERROR: FASTLE input file doesn't exist at",faafile
 		sys.exit(1)
@@ -215,9 +276,6 @@ def main():
 	if os.path.isdir(graphdir) == False:
 		print "ERROR: graph dir doesn't exist at",graphdir
 		sys.exist(1)
-	if (outfile == None):
-		outfile = faafile+".mepigram"
-		print "No output file specified, will use the default",outfile
 
 
 	# Now load the data:
@@ -252,7 +310,6 @@ def main():
 	else:
 		#print "More than 1000000"
 		print "Di-nuc shuffling 1 times"
-	
 	#run di-nuc shuffling
 	shufflefile=faaname+'.'+str(seed)+".DS.tmp.faa"
 	command=''
@@ -394,13 +451,13 @@ def main():
 
 	os.system("mv "+memefile+" "+resultdir)
 	os.system("mv "+outfile+" "+resultdir)
-	#print "Cleaning up temporary files..."
+	print "Cleaning up temporary files..."
 	os.system("rm "+shufflefile)
 	#ftoremove=[]
 	for file in os.listdir(resultdir):
 		if "tmp" in file:
 			command="rm "+resultdir+'/'+file
-			#print command
+			print command
 			os.system(command)
 
 	
