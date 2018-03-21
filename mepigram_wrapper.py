@@ -398,8 +398,8 @@ def main():
 		os.system("mv %s %s"%(logodir, resultdir))
 
 
-	os.system("mv "+memefile+" "+resultdir)
-	os.system("mv "+outfile+" "+resultdir)
+	os.system("mv %s %s" %(memefile, resultdir+"/motifs.mepigram.meme"))
+	os.system("mv %s %s" %(outfile, resultdir))
 
 
 
