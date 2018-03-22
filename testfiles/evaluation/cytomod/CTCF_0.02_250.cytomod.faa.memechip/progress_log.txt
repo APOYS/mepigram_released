@@ -1,0 +1,38 @@
+Invoking:
+  getsize CTCF_0.02_250.cytomod.faa.memechip/CTCF_0.02_250.cytomod.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.003347
+Invoking:
+  fasta-most -min 50 < CTCF_0.02_250.cytomod.faa.memechip/CTCF_0.02_250.cytomod.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.060138
+Invoking:
+  fasta-center -alph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -len 100 < CTCF_0.02_250.cytomod.faa.memechip/CTCF_0.02_250.cytomod.faa 1> CTCF_0.02_250.cytomod.faa.memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.078037
+Invoking:
+  fasta-shuffle-letters CTCF_0.02_250.cytomod.faa.memechip/seqs-centered CTCF_0.02_250.cytomod.faa.memechip/seqs-shuffled -kmer 2 -tag -dinuc -alph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.0042
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -m 1 CTCF_0.02_250.cytomod.faa.memechip/CTCF_0.02_250.cytomod.faa CTCF_0.02_250.cytomod.faa.memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.003178
+Invoking:
+  meme CTCF_0.02_250.cytomod.faa.memechip/seqs-centered -oc CTCF_0.02_250.cytomod.faa.memechip/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile CTCF_0.02_250.cytomod.faa.memechip/background -alph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -time 5082 -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 267.554357
+Invoking:
+  dreme -v 1 -oc CTCF_0.02_250.cytomod.faa.memechip/dreme_out -png -alph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -p CTCF_0.02_250.cytomod.faa.memechip/seqs-centered -n CTCF_0.02_250.cytomod.faa.memechip/seqs-shuffled -t 7032 -e 0.05
+Finished invoke:
+  name: dreme  status: 0  time: 3.092578
+Invoking:
+  centrimo -seqlen 232 -verbosity 1 -oc CTCF_0.02_250.cytomod.faa.memechip/centrimo_out -bfile CTCF_0.02_250.cytomod.faa.memechip/background -xalph CTCF_0.02_250.cytomod.faa.memechip/alphabet.meme.txt CTCF_0.02_250.cytomod.faa.memechip/CTCF_0.02_250.cytomod.faa CTCF_0.02_250.cytomod.faa.memechip/meme_out/meme.xml
+Finished invoke:
+  name: centrimo  status: 0  time: 0.059666
+Writing output
+Invoking:
+  meme-chip_html_to_tsv CTCF_0.02_250.cytomod.faa.memechip/meme-chip.html CTCF_0.02_250.cytomod.faa.memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.034671
+Done

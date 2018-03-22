@@ -1,0 +1,1 @@
+Sequence chr2_67877950 contains unknown symbol E

@@ -1,0 +1,46 @@
+Invoking:
+  getsize NRF1_0.25_5000.cytomod.faa.memechip/NRF1_0.25_5000.cytomod.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.026094
+Invoking:
+  fasta-most -min 50 < NRF1_0.25_5000.cytomod.faa.memechip/NRF1_0.25_5000.cytomod.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.090317
+Invoking:
+  fasta-center -alph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -len 100 < NRF1_0.25_5000.cytomod.faa.memechip/NRF1_0.25_5000.cytomod.faa 1> NRF1_0.25_5000.cytomod.faa.memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.14927
+Invoking:
+  fasta-shuffle-letters NRF1_0.25_5000.cytomod.faa.memechip/seqs-centered NRF1_0.25_5000.cytomod.faa.memechip/seqs-shuffled -kmer 2 -tag -dinuc -alph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.034607
+Invoking:
+  fasta-subsample NRF1_0.25_5000.cytomod.faa.memechip/seqs-centered 600 -rest NRF1_0.25_5000.cytomod.faa.memechip/seqs-discarded -seed 1 1> NRF1_0.25_5000.cytomod.faa.memechip/seqs-sampled
+Finished invoke:
+  name: sample_seqs  status: 0  time: 0.129094
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -m 1 NRF1_0.25_5000.cytomod.faa.memechip/NRF1_0.25_5000.cytomod.faa NRF1_0.25_5000.cytomod.faa.memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.017608
+Invoking:
+  meme NRF1_0.25_5000.cytomod.faa.memechip/seqs-sampled -oc NRF1_0.25_5000.cytomod.faa.memechip/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile NRF1_0.25_5000.cytomod.faa.memechip/background -alph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -time 5082 -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 1459.476569
+Invoking:
+  dreme -v 1 -oc NRF1_0.25_5000.cytomod.faa.memechip/dreme_out -png -alph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -p NRF1_0.25_5000.cytomod.faa.memechip/seqs-centered -n NRF1_0.25_5000.cytomod.faa.memechip/seqs-shuffled -t 6556 -e 0.05
+Finished invoke:
+  name: dreme  status: 0  time: 186.266283
+Invoking:
+  centrimo -seqlen 264 -verbosity 1 -oc NRF1_0.25_5000.cytomod.faa.memechip/centrimo_out -bfile NRF1_0.25_5000.cytomod.faa.memechip/background -xalph NRF1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt NRF1_0.25_5000.cytomod.faa.memechip/NRF1_0.25_5000.cytomod.faa NRF1_0.25_5000.cytomod.faa.memechip/meme_out/meme.xml NRF1_0.25_5000.cytomod.faa.memechip/dreme_out/dreme.xml
+Finished invoke:
+  name: centrimo  status: 0  time: 0.141233
+Invoking:
+  tomtom -verbosity 1 -text -thresh 0.1 NRF1_0.25_5000.cytomod.faa.memechip/combined.meme NRF1_0.25_5000.cytomod.faa.memechip/combined.meme 1> NRF1_0.25_5000.cytomod.faa.memechip/motif_alignment.txt
+Finished invoke:
+  name: align  status: 0  time: 0.023855
+Writing output
+Invoking:
+  meme-chip_html_to_tsv NRF1_0.25_5000.cytomod.faa.memechip/meme-chip.html NRF1_0.25_5000.cytomod.faa.memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.035449
+Done

@@ -1,0 +1,26 @@
+Invoking:
+  getsize .memechip/CEBPB_ENCFF002CQR.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.096646
+Invoking:
+  fasta-most -min 50 < .memechip/CEBPB_ENCFF002CQR.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.167661
+Invoking:
+  fasta-center -alph .memechip/alphabet.meme.txt -len 100 < .memechip/CEBPB_ENCFF002CQR.faa 1> .memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 65280  time: 0.07337
+Skipped shuffle_seqs due to missing requirement center_seqs
+Skipped sample_seqs due to missing requirement center_seqs
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph .memechip/alphabet.meme.txt -m 1 .memechip/CEBPB_ENCFF002CQR.faa .memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.054484
+Skipped meme due to missing requirement sample_seqs
+Skipped dreme due to missing requirement center_seqs
+Writing output
+Invoking:
+  meme-chip_html_to_tsv .memechip/meme-chip.html .memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.033775
+Done

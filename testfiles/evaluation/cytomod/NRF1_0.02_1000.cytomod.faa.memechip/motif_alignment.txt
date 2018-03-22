@@ -1,0 +1,2 @@
+#Query ID	Target ID	Optimal offset	p-value	E-value	q-value	Overlap	Query consensus	Target consensus	Orientation
+1	1	0	5.82076e-06	5.82076e-06	1.16415e-05	8	ACTATACT	ACTATACT	+

@@ -1,0 +1,46 @@
+MEME version 4
+
+ALPHABET "DNA with covalent modifications" DNA-LIKE
+A "Adenine" 8510A8 ~ T "Thymine" A89610
+C "Cytosine" A50026 ~ G "Guanine" 313695
+c "5-Carboxylcytosine" FEE090 ~ 4 "Guanine:5-Carboxylcytosine" E0F3F8
+f "5-Formylcytosine" FDAE61 ~ 3 "Guanine:5-Formylcytosine" ABD9E9
+h "5-Hydroxymethylcytosine" F46D43 ~ 2 "Guanine:5-Hydroxymethylcytosine" 74ADD1
+m "5-Methylcytosine" D73027 ~ 1 "Guanine:5-Methylcytosine" 4575B4
+? = ACGTcfhm1234
+z = Ccfhm
+9 = G1234
+N = ACGT
+V = ACG
+H = ACT
+D = AGT
+B = CGT
+y = Ccf
+8 = G34
+M = AC
+R = AG
+W = AT
+S = CG
+Y = CT
+K = GT
+x = hm
+7 = 12
+END ALPHABET
+
+strands: + -
+
+Background letter frequencies (from file `NRF1_0.1_1000.cytomod.faa.memechip/background'):
+A 0.29639 C 0.20089 G 0.20089 T 0.29639 c 0.00000 f 0.00000 h 0.00000 m 0.00272 1 0.00272 2 0.00000 3 0.00000 4 0.00000 
+
+MOTIF 1 GATAmGCA-MEME-1
+
+letter-probability matrix: alength= 12 w= 8 nsites= 19 E= 1.9e-009
+  0.000000	  0.000000	  1.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.789474	  0.000000	  0.000000	  0.210526	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  0.157895	  0.000000	  0.842105	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.736842	  0.263158	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  1.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  0.842105	  0.000000	  0.000000	  0.000000	  0.000000	  0.157895	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  1.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+  0.894737	  0.000000	  0.105263	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	  0.000000	
+
