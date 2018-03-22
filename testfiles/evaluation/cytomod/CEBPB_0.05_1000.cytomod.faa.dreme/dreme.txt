@@ -1,0 +1,61 @@
+# DREME 4.12.0
+#     command: dreme -v 1 -oc CEBPB_0.05_1000.cytomod.faa.dreme -alph alphabet.meme.txt -p ../files/SIM_seqs/cytomod_format/CEBPB_0.05_1000.cytomod.faa -t 18000 -e 0.05
+#   positives: 1000 from ../files/SIM_seqs/cytomod_format/CEBPB_0.05_1000.cytomod.faa (Wed Mar 21 15:35:20 PDT 2018)
+#   negatives: 1000 from shuffled positives
+#        host: skat
+#        when: Thu Mar 22 12:55:37 PDT 2018
+
+MEME version 4.12.0
+
+ALPHABET "DNA with covalent modifications" DNA-LIKE
+A "Adenine" 8510A8 ~ T "Thymine" A89610
+C "Cytosine" A50026 ~ G "Guanine" 313695
+c "5-Carboxylcytosine" FEE090 ~ 4 "Guanine:5-Carboxylcytosine" E0F3F8
+f "5-Formylcytosine" FDAE61 ~ 3 "Guanine:5-Formylcytosine" ABD9E9
+h "5-Hydroxymethylcytosine" F46D43 ~ 2 "Guanine:5-Hydroxymethylcytosine" 74ADD1
+m "5-Methylcytosine" D73027 ~ 1 "Guanine:5-Methylcytosine" 4575B4
+? = ACGTcfhm1234
+z = Ccfhm
+9 = G1234
+N = ACGT
+V = ACG
+H = ACT
+D = AGT
+B = CGT
+y = Ccf
+8 = G34
+M = AC
+R = AG
+W = AT
+S = CG
+Y = CT
+K = GT
+x = hm
+7 = 12
+END ALPHABET
+
+strands: + -
+
+Background letter frequencies (from dataset):
+A 0.292 C 0.200 G 0.206 T 0.297 c 0.000 f 0.000 h 0.000 m 0.005 1 0.000 2 0.000 3 0.000 4 0.000
+
+
+MOTIF CGABCG DREME-1
+
+#             Word    RC Word        Pos        Neg    P-value    E-value
+# BEST      CGABCG     CGVTCG         80         28   1.4e-007   8.8e-003
+#           CGACCG     CGGTCG         37         14   7.7e-004   4.9e+001
+#           CGATCG     CGATCG         18          4   2.1e-003   1.3e+002
+#           CGAGCG     CGCTCG         27         10   3.5e-003   2.3e+002
+
+letter-probability matrix: alength= 12 w= 6 nsites= 81 E= 8.8e-003
+0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+0.000000 0.456790 0.333333 0.209877 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+
+
+# Stopping reason: E-value threshold exceeded
+#    Running time: 51.96 seconds
