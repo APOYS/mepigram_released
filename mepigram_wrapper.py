@@ -191,7 +191,7 @@ def main():
 
 	outfile = args.output #this contains the motif file, the enrichment file .
 	maxmotifnum = args.maxmotifnum
-	makelogo = args.makelogo
+	makelogo = False
 	if args.makelogo != "y" and args.makelogo != "n":
 		print "ERROR: parameter not recognized in --makelogo:", args.makelogo
 		sys.exit(1)
