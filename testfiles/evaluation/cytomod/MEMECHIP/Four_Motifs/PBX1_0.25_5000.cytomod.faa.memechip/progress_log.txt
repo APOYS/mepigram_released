@@ -1,0 +1,46 @@
+Invoking:
+  getsize PBX1_0.25_5000.cytomod.faa.memechip/PBX1_0.25_5000.cytomod.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.025976
+Invoking:
+  fasta-most -min 50 < PBX1_0.25_5000.cytomod.faa.memechip/PBX1_0.25_5000.cytomod.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.089957
+Invoking:
+  fasta-center -alph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -len 100 < PBX1_0.25_5000.cytomod.faa.memechip/PBX1_0.25_5000.cytomod.faa 1> PBX1_0.25_5000.cytomod.faa.memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.153008
+Invoking:
+  fasta-shuffle-letters PBX1_0.25_5000.cytomod.faa.memechip/seqs-centered PBX1_0.25_5000.cytomod.faa.memechip/seqs-shuffled -kmer 2 -tag -dinuc -alph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.03449
+Invoking:
+  fasta-subsample PBX1_0.25_5000.cytomod.faa.memechip/seqs-centered 600 -rest PBX1_0.25_5000.cytomod.faa.memechip/seqs-discarded -seed 1 1> PBX1_0.25_5000.cytomod.faa.memechip/seqs-sampled
+Finished invoke:
+  name: sample_seqs  status: 0  time: 0.129251
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -m 1 PBX1_0.25_5000.cytomod.faa.memechip/PBX1_0.25_5000.cytomod.faa PBX1_0.25_5000.cytomod.faa.memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.017618
+Invoking:
+  meme PBX1_0.25_5000.cytomod.faa.memechip/seqs-sampled -oc PBX1_0.25_5000.cytomod.faa.memechip/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile PBX1_0.25_5000.cytomod.faa.memechip/background -alph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -time 5082 -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 1539.208956
+Invoking:
+  dreme -v 1 -oc PBX1_0.25_5000.cytomod.faa.memechip/dreme_out -png -alph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt -p PBX1_0.25_5000.cytomod.faa.memechip/seqs-centered -n PBX1_0.25_5000.cytomod.faa.memechip/seqs-shuffled -t 6524 -e 0.05
+Finished invoke:
+  name: dreme  status: 0  time: 233.836616
+Invoking:
+  centrimo -seqlen 246 -verbosity 1 -oc PBX1_0.25_5000.cytomod.faa.memechip/centrimo_out -bfile PBX1_0.25_5000.cytomod.faa.memechip/background -xalph PBX1_0.25_5000.cytomod.faa.memechip/alphabet.meme.txt PBX1_0.25_5000.cytomod.faa.memechip/PBX1_0.25_5000.cytomod.faa PBX1_0.25_5000.cytomod.faa.memechip/meme_out/meme.xml PBX1_0.25_5000.cytomod.faa.memechip/dreme_out/dreme.xml
+Finished invoke:
+  name: centrimo  status: 0  time: 0.135113
+Invoking:
+  tomtom -verbosity 1 -text -thresh 0.1 PBX1_0.25_5000.cytomod.faa.memechip/combined.meme PBX1_0.25_5000.cytomod.faa.memechip/combined.meme 1> PBX1_0.25_5000.cytomod.faa.memechip/motif_alignment.txt
+Finished invoke:
+  name: align  status: 0  time: 0.033935
+Writing output
+Invoking:
+  meme-chip_html_to_tsv PBX1_0.25_5000.cytomod.faa.memechip/meme-chip.html PBX1_0.25_5000.cytomod.faa.memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.034454
+Done
