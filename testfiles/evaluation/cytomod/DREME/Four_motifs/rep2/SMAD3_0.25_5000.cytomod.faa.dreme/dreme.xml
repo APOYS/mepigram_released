@@ -1,0 +1,123 @@
+<dreme version="4.12.0" release="Tue Jun 27 16:22:50 2017 -0700">
+  <model>
+    <command_line>dreme -v 1 -oc SMAD3_0.25_5000.cytomod.faa.dreme -alph alphabet.meme.txt -p /home/vungo/Work/SIM_seqs_3/cytomod/SMAD3_0.25_5000.cytomod.faa -t 18000 -e 0.05</command_line>
+    <positives name="SMAD3 0.25 5000.cytomod" count="5000" file="/home/vungo/Work/SIM_seqs_3/cytomod/SMAD3_0.25_5000.cytomod.faa" last_mod_date="Sun Mar 25 22:35:56 PDT 2018" />
+    <negatives name="shuffled positive sequences" count="5000" from="shuffled"/>
+    <alphabet name="DNA with covalent modifications" like="dna">
+      <letter id="A" symbol="A" complement="T" name="Adenine" colour="8510A8"/>
+      <letter id="C" symbol="C" complement="G" name="Cytosine" colour="A50026"/>
+      <letter id="G" symbol="G" complement="C" name="Guanine" colour="313695"/>
+      <letter id="T" symbol="T" complement="A" name="Thymine" colour="A89610"/>
+      <letter id="c" symbol="c" complement="4" name="5-Carboxylcytosine" colour="FEE090"/>
+      <letter id="f" symbol="f" complement="3" name="5-Formylcytosine" colour="FDAE61"/>
+      <letter id="h" symbol="h" complement="2" name="5-Hydroxymethylcytosine" colour="F46D43"/>
+      <letter id="m" symbol="m" complement="1" name="5-Methylcytosine" colour="D73027"/>
+      <letter id="n1" symbol="1" complement="m" name="Guanine:5-Methylcytosine" colour="4575B4"/>
+      <letter id="n2" symbol="2" complement="h" name="Guanine:5-Hydroxymethylcytosine" colour="74ADD1"/>
+      <letter id="n3" symbol="3" complement="f" name="Guanine:5-Formylcytosine" colour="ABD9E9"/>
+      <letter id="n4" symbol="4" complement="c" name="Guanine:5-Carboxylcytosine" colour="E0F3F8"/>
+      <letter id="x3F" symbol="?" equals="ACGTcfhm1234"/>
+      <letter id="z" symbol="z" equals="Ccfhm"/>
+      <letter id="n9" symbol="9" equals="12G43"/>
+      <letter id="N" symbol="N" equals="ACGT"/>
+      <letter id="V" symbol="V" equals="ACG"/>
+      <letter id="H" symbol="H" equals="ACT"/>
+      <letter id="D" symbol="D" equals="AGT"/>
+      <letter id="B" symbol="B" equals="CGT"/>
+      <letter id="y" symbol="y" equals="Ccf"/>
+      <letter id="n8" symbol="8" equals="G43"/>
+      <letter id="M" symbol="M" equals="AC"/>
+      <letter id="R" symbol="R" equals="AG"/>
+      <letter id="W" symbol="W" equals="AT"/>
+      <letter id="S" symbol="S" equals="CG"/>
+      <letter id="Y" symbol="Y" equals="CT"/>
+      <letter id="K" symbol="K" equals="GT"/>
+      <letter id="x" symbol="x" equals="hm"/>
+      <letter id="n7" symbol="7" equals="12"/>
+    </alphabet>
+    <strands>both</strands>
+    <background A="0.293" C="0.201" G="0.205" T="0.295" c="0.000" f="0.000" h="0.000" m="0.006" n1="0.000" n2="0.000" n3="0.000" n4="0.000" from="dataset"/>
+    <stop evalue="0.05" time="18000"/>
+    <ngen>100</ngen>
+    <add_pv_thresh>0.01</add_pv_thresh>
+    <seed>1</seed>
+    <host>vungo-ubuntu</host>
+    <when>Mon Mar 26 03:28:18 PDT 2018</when>
+  </model>
+  <motifs>
+    <motif id="m01" alt="DREME-1" seq="WGSWC1" length="6" nsites="553" p="545" n="136" pvalue="4.8e-063" evalue="5.2e-058" unerased_evalue="5.2e-058">
+      <pos A="0.602170" C="0.000000" G="0.000000" T="0.397830" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.453888" G="0.546112" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.444846" C="0.000000" G="0.000000" T="0.555154" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="1.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="AGGTC1" p="130" n="17" pvalue="2.5e-023" evalue="2.7e-018"/>
+      <match seq="AGGAC1" p="66" n="14" pvalue="1.4e-009" evalue="1.5e-004"/>
+      <match seq="AGCAC1" p="64" n="14" pvalue="3.8e-009" evalue="4.1e-004"/>
+      <match seq="TGCAC1" p="63" n="16" pvalue="4.2e-008" evalue="4.5e-003"/>
+      <match seq="AGCTC1" p="72" n="21" pvalue="4.6e-008" evalue="4.9e-003"/>
+      <match seq="TGGAC1" p="52" n="15" pvalue="3.0e-006" evalue="3.2e-001"/>
+      <match seq="TGGTC1" p="53" n="16" pvalue="4.2e-006" evalue="4.6e-001"/>
+      <match seq="TGCTC1" p="50" n="24" pvalue="1.6e-003" evalue="1.7e+002"/>
+    </motif>
+    <motif id="m02" alt="DREME-2" seq="CGCGVH" length="6" nsites="900" p="824" n="480" pvalue="6.7e-025" evalue="7.1e-020" unerased_evalue="7.1e-020">
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.372222" C="0.301111" G="0.326667" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.397778" C="0.255556" G="0.000000" T="0.346667" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="CGCGAT" p="154" n="81" pvalue="8.4e-007" evalue="8.9e-002"/>
+      <match seq="CGCGGA" p="165" n="90" pvalue="1.1e-006" evalue="1.2e-001"/>
+      <match seq="CGCGGT" p="138" n="72" pvalue="2.5e-006" evalue="2.6e-001"/>
+      <match seq="CGCGCT" p="141" n="75" pvalue="3.3e-006" evalue="3.5e-001"/>
+      <match seq="CGCGAC" p="135" n="73" pvalue="8.4e-006" evalue="8.9e-001"/>
+      <match seq="CGCGAA" p="185" n="115" pvalue="2.4e-005" evalue="2.6e+000"/>
+      <match seq="CGCGGC" p="106" n="60" pvalue="2.0e-004" evalue="2.1e+001"/>
+      <match seq="CGCGCA" p="121" n="78" pvalue="1.3e-003" evalue="1.4e+002"/>
+      <match seq="CGCGCC" p="89" n="58" pvalue="6.2e-003" evalue="6.6e+002"/>
+    </motif>
+    <motif id="m03" alt="DREME-3" seq="ACCGRY" length="6" nsites="970" p="900" n="652" pvalue="4.1e-012" evalue="4.3e-007" unerased_evalue="2.6e-007">
+      <pos A="1.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.647423" C="0.000000" G="0.352577" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.478351" G="0.000000" T="0.521649" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="ACCGAT" p="365" n="264" pvalue="1.8e-005" evalue="1.9e+000"/>
+      <match seq="ACCGAC" p="250" n="180" pvalue="3.3e-004" evalue="3.4e+001"/>
+      <match seq="ACCGGC" p="203" n="149" pvalue="2.0e-003" evalue="2.1e+002"/>
+      <match seq="ACCGGT" p="132" n="94" pvalue="6.3e-003" evalue="6.6e+002"/>
+    </motif>
+    <motif id="m04" alt="DREME-4" seq="GGWA1" length="5" nsites="98" p="97" n="24" pvalue="5.1e-012" evalue="5.4e-007" unerased_evalue="5.4e-007">
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.469388" C="0.000000" G="0.000000" T="0.530612" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="1.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="1.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="GGTA1" p="51" n="7" pvalue="1.1e-009" evalue="1.1e-004"/>
+      <match seq="GGAA1" p="46" n="17" pvalue="1.6e-004" evalue="1.7e+001"/>
+    </motif>
+    <motif id="m05" alt="DREME-5" seq="1SAG" length="4" nsites="395" p="377" n="238" pvalue="4.0e-009" evalue="4.2e-004" unerased_evalue="2.2e-030">
+      <pos A="0.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="1.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.579747" G="0.420253" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="1.000000" C="0.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="1CAG" p="222" n="128" pvalue="1.8e-007" evalue="1.9e-002"/>
+      <match seq="1GAG" p="163" n="112" pvalue="1.1e-003" evalue="1.1e+002"/>
+    </motif>
+    <motif id="m06" alt="DREME-6" seq="CGBCCG" length="6" nsites="266" p="262" n="150" pvalue="9.7e-009" evalue="9.8e-004" unerased_evalue="4.4e-006">
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.342105" G="0.210526" T="0.447368" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="1.000000" G="0.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <pos A="0.000000" C="0.000000" G="1.000000" T="0.000000" c="0.000000" f="0.000000" h="0.000000" m="0.000000" n1="0.000000" n2="0.000000" n3="0.000000" n4="0.000000"/>
+      <match seq="CGTCCG" p="120" n="63" pvalue="1.3e-005" evalue="1.3e+000"/>
+      <match seq="CGGCCG" p="54" n="25" pvalue="7.0e-004" evalue="7.1e+001"/>
+      <match seq="CGCCCG" p="92" n="62" pvalue="9.1e-003" evalue="9.2e+002"/>
+    </motif>
+  </motifs>
+  <run_time cpu="424.47" real="424.47" stop="evalue"/>
+</dreme>
