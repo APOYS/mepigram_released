@@ -20,7 +20,8 @@ def load_motifs_typeEF(filename):
     infos={}
     for s in range(len(seq)):
         t=seq[s].strip().split("\n")
-        name=int(t[0].split('_')[0])
+        #name=int(t[0].split('_')[0]) #load only the number
+        name=t[0] #load whole name
         motifs[name]=t[2:]
         infos[name]=t[0:2]
     for m in motifs:
@@ -68,7 +69,8 @@ def load_motifs_typeE(filename):
     infos={}
     for s in range(len(seq)):
         t=seq[s].strip().split("\n")
-        name=int(t[0].split('_')[0])
+        #name=int(t[0].split('_')[0]) #load only number
+        name = t[0] #load whole name
         motifs[name]=t[2:]
         infos[name]=t[0:2]
     for m in motifs:
@@ -181,13 +183,16 @@ def main():
         for m in motifs:
             print "motif",m
             PWM=motifs[m]
-            name=infos[m][0]
+            name=infos[m][0] 
             name=name.replace("MOTIF",'').strip()
+
             if "m-motif" in name:
                 name=nametag+"_"+name.split("_")[0]+"_m-motif"
             else:
                 name=nametag+"_"+name.split("_")[0]
                 
+            name = m #use motif name, NO TAG
+
             target=open("tmp.weblogo.faa",'w')
             for i in range(3000):
                 kmer=randomkmer_typeEF(PWM)
@@ -210,11 +215,14 @@ def main():
             PWM=motifs[m]
             name=infos[m][0]
             name=name.replace("MOTIF",'').strip()
+
             if "m-motif" in name:
                 name=nametag+"_"+name.split("_")[0]+"_m-motif"
             else:
                 name=nametag+"_"+name.split("_")[0]
-            	
+
+            name = m #use motif name, NO TAG
+
             target=open("tmp.weblogo.faa",'w')
             for i in range(3000):
                 kmer=randomkmer_typeE(PWM)

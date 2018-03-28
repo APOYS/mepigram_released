@@ -1,0 +1,5 @@
+#Query ID	Target ID	Optimal offset	p-value	E-value	q-value	Overlap	Query consensus	Target consensus	Orientation
+1	1	0	3.04832e-12	6.09663e-12	1.21933e-11	8	GATAmGCA	GATAmGCA	+
+1	2	0	9.0521e-06	1.81042e-05	1.81042e-05	7	GATAmGCA	GATAmGC	+
+2	2	0	9.87654e-09	1.97531e-08	3.95062e-08	7	GATAmGC	GATAmGC	+
+2	1	0	1.78686e-05	3.57371e-05	3.57371e-05	7	GATAmGC	GATAmGCA	+

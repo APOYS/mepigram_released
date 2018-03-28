@@ -1,0 +1,38 @@
+Invoking:
+  getsize BHE40_0.02_250.cytomod.faa.memechip/BHE40_0.02_250.cytomod.faa 1> $metrics
+Finished invoke:
+  name: count_seqs  status: 0  time: 0.003343
+Invoking:
+  fasta-most -min 50 < BHE40_0.02_250.cytomod.faa.memechip/BHE40_0.02_250.cytomod.faa 1> $metrics
+Finished invoke:
+  name: most_seqs  status: 0  time: 0.059672
+Invoking:
+  fasta-center -alph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -len 100 < BHE40_0.02_250.cytomod.faa.memechip/BHE40_0.02_250.cytomod.faa 1> BHE40_0.02_250.cytomod.faa.memechip/seqs-centered
+Finished invoke:
+  name: center_seqs  status: 0  time: 0.075109
+Invoking:
+  fasta-shuffle-letters BHE40_0.02_250.cytomod.faa.memechip/seqs-centered BHE40_0.02_250.cytomod.faa.memechip/seqs-shuffled -kmer 2 -tag -dinuc -alph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -seed 1
+Finished invoke:
+  name: shuffle_seqs  status: 0  time: 0.004234
+Invoking:
+  fasta-get-markov -nostatus -nosummary -alph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -m 1 BHE40_0.02_250.cytomod.faa.memechip/BHE40_0.02_250.cytomod.faa BHE40_0.02_250.cytomod.faa.memechip/background
+Finished invoke:
+  name: bg  status: 0  time: 0.003135
+Invoking:
+  meme BHE40_0.02_250.cytomod.faa.memechip/seqs-centered -oc BHE40_0.02_250.cytomod.faa.memechip/meme_out -mod zoops -nmotifs 3 -minw 6 -maxw 30 -bfile BHE40_0.02_250.cytomod.faa.memechip/background -alph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -time 5082 -revcomp -nostatus
+Finished invoke:
+  name: meme  status: 0  time: 263.431347
+Invoking:
+  dreme -v 1 -oc BHE40_0.02_250.cytomod.faa.memechip/dreme_out -png -alph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt -p BHE40_0.02_250.cytomod.faa.memechip/seqs-centered -n BHE40_0.02_250.cytomod.faa.memechip/seqs-shuffled -t 7034 -e 0.05
+Finished invoke:
+  name: dreme  status: 0  time: 3.145471
+Invoking:
+  centrimo -seqlen 260 -verbosity 1 -oc BHE40_0.02_250.cytomod.faa.memechip/centrimo_out -bfile BHE40_0.02_250.cytomod.faa.memechip/background -xalph BHE40_0.02_250.cytomod.faa.memechip/alphabet.meme.txt BHE40_0.02_250.cytomod.faa.memechip/BHE40_0.02_250.cytomod.faa BHE40_0.02_250.cytomod.faa.memechip/meme_out/meme.xml
+Finished invoke:
+  name: centrimo  status: 0  time: 0.043889
+Writing output
+Invoking:
+  meme-chip_html_to_tsv BHE40_0.02_250.cytomod.faa.memechip/meme-chip.html BHE40_0.02_250.cytomod.faa.memechip/summary.tsv
+Finished invoke:
+  name: summary  status: 512  time: 0.032451
+Done
