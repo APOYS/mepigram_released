@@ -1,5 +1,0 @@
-#Query ID	Target ID	Optimal offset	p-value	E-value	q-value	Overlap	Query consensus	Target consensus	Orientation
-1	1	0	2.95418e-05	0.000118167	0.000236335	4	1CAG	1CAG	+
-2	2	0	1.83797e-06	7.35189e-06	1.47038e-05	7	CGACACA	CGACACA	+
-3	3	0	1.00539e-06	4.02155e-06	8.04309e-06	8	TCTTATGA	TCTTATGA	+
-4	4	0	2.45063e-06	9.80252e-06	1.9605e-05	7	CGACTAA	CGACTAA	+

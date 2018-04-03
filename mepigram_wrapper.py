@@ -2,8 +2,6 @@
 
 """
 TODO: 
-	- replace all perl scripts with python
-	- use args
 
 
 Workflow:

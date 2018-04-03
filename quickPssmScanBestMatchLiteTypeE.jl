@@ -66,14 +66,14 @@ end
 
 function main()
 """This function takes in a memefile, a set of sequences, and output the best score for each sequence by each motif in each separate file"""
-	bg=Dict('A'=> 0.205, 'T' => 0.205, 'C' => 0.2874, 'G' => 0.295, 'E' => 0.0076) # this assumes about 25millions mC in the genome
+	#bg=Dict('A'=> 0.205, 'T' => 0.205, 'C' => 0.2874, 'G' => 0.295, 'E' => 0.0076) # this assumes about 25millions mC in the genome
     #p_cutoff = float(ARGS[1])
     motiffile = ARGS[1]
     sequencefile = ARGS[2]
     tag = ARGS[3]
     resultdir = ARGS[4] 
-
     bgfile =ARGS[5]
+
     seq=split(strip(readstring(open(bgfile))),'\n')
     bg=Dict()
     for line in seq

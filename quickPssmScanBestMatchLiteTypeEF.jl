@@ -31,7 +31,7 @@ function load_motifs(filename)
             push!(tdict['G'],float(tmp[3]))
             push!(tdict['T'],float(tmp[4]))
             push!(tdict['E'],float(tmp[5]))
-            push!(tdict['F'],float(tmp[5]))
+            push!(tdict['F'],float(tmp[6]))
         end 
         motifs[m]=tdict
         #ans[m]=tdict
@@ -70,11 +70,6 @@ function main()
         bg[collect((tmp[1]))[1]]=float(tmp[2])
     end 
     println(bg)
-    #outfile =ARGS[3]
-    #motiffile="./test.motif.meme"
-    #sequencefile="./ENCFF002CIV.narrowPeak.500bps.faa"
-    #negativeregions = ARGS[4]
-    #output = ARGS[5] #the output are the name of the motif+ .motif
     motifs=load_motifs(motiffile)
     println("Loaded motifs")
     

@@ -1,5 +1,0 @@
-#Query ID	Target ID	Optimal offset	p-value	E-value	q-value	Overlap	Query consensus	Target consensus	Orientation
-1	1	0	0.000491533	0.00196613	0.00393226	5	CGCGA	CGCGA	+
-2	2	0	0.000491533	0.00196613	0.00393226	5	CGGTC	CGGTC	+
-3	3	0	6.55457e-06	2.62183e-05	5.24365e-05	5	CAmGT	CAmGT	+
-4	4	0	6.81814e-07	2.72726e-06	5.45451e-06	8	CCTCCGGA	CCTCCGGA	+

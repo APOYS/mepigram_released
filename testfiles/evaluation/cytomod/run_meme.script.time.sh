@@ -1,1 +1,0 @@
-for file in ~/Work/SIM_seqs_2/cytomod/DIR*250.cytomod.faa; do newname=$(basename $file).meme;echo $file $newname; mytime="$(time ( ./run_meme.sh $file) 2>&1 1>/dev/null )"; echo $mytime > $newname.log;done
